@@ -1,0 +1,19 @@
+.Flamingos{
+    max-width: 500px;
+    float: right;
+    margin-right: 100px;
+
+
+}
+.sourceForm{
+    
+    max-width: 400px;
+  
+}
+.mainSourceFormDiv{
+    margin-top: 100px;
+    
+    display: flex;
+    justify-content: space-around;
+
+}

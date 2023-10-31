@@ -1,0 +1,44 @@
+
+
+
+
+.mainProductDiv{
+    display: grid;
+    margin: 8px;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 50px 260px 260px ;
+    margin-top: 30px;
+
+}
+.mainProductDiv div{
+    margin: 8px;
+}
+
+
+
+
+
+.Title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 40px;
+   }
+   .image{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   } 
+    */
+   img{
+    max-height: 100px;
+    max-width: 100px;
+   }
+   .productDescription{
+   
+   }
+   .productTitle{
+    background-color: #000001;
+    }
+   
+   

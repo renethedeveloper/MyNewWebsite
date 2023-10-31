@@ -1,0 +1,45 @@
+.mainImage {
+    margin-top: 25px;
+    width: 90vw;
+    margin-left: 50px; 
+    height: 598px;
+    box-shadow: 2px 2px 10px 2px gray;
+}
+#galleryImage{
+height: 300px;
+  width: 300px;
+  box-shadow: 2px 2px 10px 2px gray;
+  position: relative;
+}
+
+
+
+.gallery{
+  display: flex;
+
+  justify-content: space-around;
+  align-items: start;
+  
+}
+.map{
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  max-width: 300px;
+  margin-left: 67%;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 10px 2px gray;
+}
+.directions{
+  display: flex;
+  top: 1063px;
+  position: absolute;
+  color: black;
+  text-align: end;
+  right: 192px;
+}
+
+
+
+  
+  

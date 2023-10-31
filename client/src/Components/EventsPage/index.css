@@ -1,0 +1,50 @@
+#drawnKristy{
+   
+    width: 90vw;
+    flex-shrink: 100px;
+    height: 598px;
+    margin-bottom:400px ;
+    position: relative;
+    box-shadow: 2px 2px 10px 2px gray;
+}
+.eventTitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: start;
+    margin: 0;
+    margin-left: 50px;
+   
+}
+
+.container{
+    width: 90vw;
+    height: 90vh;
+}
+.eventBox{
+    box-shadow: 2px 2px 10px 2px gray;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #CCCCFF;
+    /* background-image: url("public/images/Screenshot 2023-09-09 at 5.32.54 PM.png"); */
+    background-size: cover;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 30%;
+    height: 70%;
+    top: 50%;
+    left:55%;
+    background-color:#CCCCFF;
+    border: solid black 15px;
+    z-index: 2;
+   
+}
+.eventList{
+    background-color: #CCCCFF;
+}
+.eventListItem{
+    background-color: #CCCCFF;
+}
+
+
+

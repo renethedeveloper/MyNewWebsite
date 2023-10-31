@@ -1,0 +1,36 @@
+.contactContainer{
+    display: grid;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   grid-template-columns: 1fr 2fr 1fr;
+   grid-template-rows: 1fr 1fr 50px;
+   margin-top: 40px;
+ 
+}
+.contactContainer img{
+   
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+    margin: none;
+    grid-row:  1;
+    
+    }
+.contactAndEmail{
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: start;
+    position: relative;
+    left: 40px;
+}
+   
+.customSourcing{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.phoneNumber{
+   margin-top: 80px;
+   text-align: center;
+}
