@@ -30,7 +30,7 @@ app.use((req, res, next)=> {
 
 
 
-app.post("/server/products", async (req, res) => {
+app.post("/products", async (req, res) => {
     try {
         const newProduct = req.body;
         if (!newProduct.title || !newProduct.description || !newProduct.price) {
