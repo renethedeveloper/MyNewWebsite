@@ -19,6 +19,8 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use(helmet());
+
+
 app.use((req, res, next)=> {
     if (req.path.startsWith('/server')) {
         req.url = req.url.replace('/server', ''); // strip /server from the path
@@ -27,7 +29,9 @@ app.use((req, res, next)=> {
   });
 
 // Routes
-
+app.get("/", async (req, res)=>{
+    res.send("Hello and welcome.")
+})
 
 
 app.post("/products", async (req, res) => {
