@@ -7,6 +7,7 @@ import CustomSourcing from './Components/CustomSourcing';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
 import EventPage from './Components/EventsPage';
+import About from './Components/About';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
         <Route path="/input" element={<InputProducts />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/" element={<Home />} />

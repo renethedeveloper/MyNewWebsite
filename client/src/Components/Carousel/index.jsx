@@ -6,12 +6,6 @@ import { MyContext } from '../../Context';
 
 
 
-const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
-  768: { items: 3 },
-  1024: { items: 4 },
-};
 
 // const items = [
 //   <img  id="thumbnail" key="image1" src="/images/7pXvW1W.jpg" alt="image" />,
