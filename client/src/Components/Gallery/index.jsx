@@ -1,20 +1,25 @@
-import React, {  useEffect } from 'react';
-import { useContext } from 'react';
-import "./index.css";
-import Carousel from '../Carousel';
-import { MyContext } from '../../Context';
+import React, { useEffect, useContext, useState } from "react";
+import axios from "axios";
+import { MyContext } from "../../Context";
+import Carousel from "../Carousel"
+import "./index.css"
 
-const Gallery = ({productType}) => {
-  const { defaultImage, selectedImage, setSelectedImage, productsArray } = useContext(MyContext);
+const Gallery = ({ productType }) => {
+  const { selectedImage, setSelectedImage, productsArray } = useContext(MyContext);
+
+  const [mainImage, setMainImage] = useState(""); // State to store the main image
 
   useEffect(() => {
-    if (selectedImage === undefined) {
-      setSelectedImage(defaultImage);
-    }
-  }, [selectedImage, setSelectedImage, defaultImage]);
+    // Find the first product of the specified productType
+    const firstProduct = productsArray.find((product) => product.type === productType);
 
-  const filteredProducts = productsArray.filter(product => product.type === productType);
-  console.log(productsArray+"Hello there!")
+    // Set the main image to the image of the first product, if it exists
+    if (firstProduct) {
+      setMainImage(firstProduct.image);
+    } else {
+      setMainImage(""); // No product found for the productType
+    }
+  }, [productsArray, productType]);
 
   return (
     <div>
@@ -22,28 +27,30 @@ const Gallery = ({productType}) => {
         <div className='Title'>{productType}</div>
 
         <div className='mainPic'>
-          <img className='image' src={defaultImage[product?.image]} alt="mainImage" />
+          <img className='image' src={mainImage} alt="mainImage" />
         </div>
 
         <div className='specs'>
-          {filteredProducts.map(product => (
-            <div key={product._id}>
-              <h4 className='productTitle'>{product.title}</h4>
-              <h3 className='productDescription'>{product.description}</h3>
-              <br /><br /><br /><br />
-              <p className='price'>Price: {product.price}</p>
-            </div>
-          ))}
+          {productsArray
+            .filter((product) => product.type === productType)
+            .map((product) => (
+              <div key={product._id}>
+                <h4 className='productTitle'>{product.title}</h4>
+                <h3 className='productDescription'>{product.description}</h3>
+                <br /><br /><br /><br />
+                <p className='price'>Price: {product.price}</p>
+              </div>
+            ))}
         </div>
 
         <div className='paymentOptions'>Payments options</div>
       </div>
 
       <div className='carousel'>
-        {<Carousel/>}
+        {<Carousel />}
       </div>
     </div>
   );
-}
+};
 
 export default Gallery;

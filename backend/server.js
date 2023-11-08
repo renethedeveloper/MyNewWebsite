@@ -5,13 +5,16 @@ const cors = require("cors");
 const Product = require("./models/index.jsx");
 require('dotenv').config();
 require("./config");
+const path = require("path")
 
 const PORT = 3000;
 
 const app = express();
 
 // Middleware
-app.use(express.static('public')); 
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));

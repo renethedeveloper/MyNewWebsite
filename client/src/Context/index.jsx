@@ -13,36 +13,38 @@ const ContextProvider = ({ children }) => {
       const options = {
         method: "GET",
         url: "/server/products",
+       
+        
       };
 
       try {
-        const response = await axios.request(options);
+        const response = await axios(options);
        
-        console.log(response.data +"We got the goods!");
+        console.log(response.data, "We got the goods!");
         setProductsArray(response.data);
         localStorage.setItem("products", JSON.stringify(response.data));
 
        
 
         // Set default images for each product type
-        const defaultImages = {};
-        const uniqueTypes = [
-          ...new Set(response.data.map((product) => product.type)),
-        ];
-        uniqueTypes.forEach((type) => {
-          const typeProducts = response.data.filter(
-            (product) => product.type === type
-          );
-          if (typeProducts.length > 0) {
-            defaultImages[type] = typeProducts[0].image;
-          } else {
-            defaultImages[type] = "";
-          }
-        });
+        // const defaultImages = {};
+        // const uniqueTypes = [
+        //   ...new Set(response.data.map((product) => product.type)),
+        // ];
+        // uniqueTypes.forEach((type) => {
+        //   const typeProducts = response.data.filter(
+        //     (product) => product.type === type
+        //   );
+        //   if (typeProducts.length > 0) {
+        //     defaultImages[type] = typeProducts[0].image;
+        //   } else {
+        //     defaultImages[type] = "";
+        //   }
+        // });
 
         
 
-        setSelectedImage(defaultImages);
+        // setSelectedImage(defaultImages);
       } catch (error) {
         console.error(error);
         console.log("There was an error selecting the image.")

@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import "./index.css";
-import { Context } from 'react';
+import { MyContext } from '../../Context';
+
 
 
 const responsive = {
@@ -38,7 +39,7 @@ const Carousel = ({children}) => {
     
     const  handleImage = (url) => {
     
-    setSelectedImage("http://"+url)
+    setSelectedImage(url)
     console.log(url)
       }
 
@@ -57,7 +58,8 @@ const productsJsx = productsArray.map((productObject) => {
    return(<div key={productObject.id}>
     <h3 className='carouselTitle'>{productObject.name}</h3>
 
-    <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={"http://"+ productObject.image} alt={productObject.id} />
+    {/* <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={"http://"+ productObject.image} alt={productObject.id} /> */}
+    <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={ productObject.image} alt={productObject.id} />
 
   </div>) 
 })

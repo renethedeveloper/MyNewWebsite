@@ -8,6 +8,9 @@ import Contact from './Components/Contact';
 import Home from './Components/Home';
 import EventPage from './Components/EventsPage';
 
+
+
+
 function App() {
   return (
     <>
