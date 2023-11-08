@@ -6,6 +6,12 @@ import { MyContext } from '../../Context';
 
 
 
+const responsive = {
+  0: { items: 1 },
+  568: { items: 2 },
+  768: { items: 3 },
+  1024: { items: 4 },
+};
 
 // const items = [
 //   <img  id="thumbnail" key="image1" src="/images/7pXvW1W.jpg" alt="image" />,
@@ -19,9 +25,9 @@ import { MyContext } from '../../Context';
 
 
 
-const Carousel = ({children}) => {
+const Carousel = ({children, productsArray}) => {
 
-    const {productsArray, setSelectedImage} = useContext(MyContext);
+    const { setSelectedImage} = useContext(MyContext);
  
    
 
@@ -48,26 +54,24 @@ const Carousel = ({children}) => {
 
 console.log(productsArray);
 const productsJsx = productsArray.map((productObject) => {
-
-   return(<div key={productObject.id}>
-    <h3 className='carouselTitle'>{productObject.name}</h3>
-
-    {/* <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={"http://"+ productObject.image} alt={productObject.id} /> */}
-    <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={ productObject.image} alt={productObject.id} />
-
-  </div>) 
-})
-  
   return (
-    <div className='carousel'>
-      <AliceCarousel
-        mouseTracking
-        items={productsJsx}
-        responsive={responsive}
-        controlsStrategy="alternate"
-      />
+    <div key={productObject.id}>
+      <h3 className='carouselTitle'>{productObject.name}</h3>
+      <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={productObject.image} alt={productObject.id} />
     </div>
-  )
-}
+  );
+});
+
+return (
+  <div className='carousel'>
+    <AliceCarousel
+      mouseTracking
+      items={productsJsx}
+      responsive={responsive}
+      controlsStrategy="alternate"
+    />
+  </div>
+);
+};
 
 export default Carousel;

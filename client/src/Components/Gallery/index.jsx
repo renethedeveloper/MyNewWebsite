@@ -21,6 +21,8 @@ const Gallery = ({ productType }) => {
     }
   }, [productsArray, productType]);
 
+  const filteredProducts = productsArray.filter((product) => product.type === productType);
+
   return (
     <div>
       <div className='mainProductDiv'>
@@ -47,7 +49,7 @@ const Gallery = ({ productType }) => {
       </div>
 
       <div className='carousel'>
-        {<Carousel />}
+        {<Carousel productsArray={filteredProducts} />}
       </div>
     </div>
   );
