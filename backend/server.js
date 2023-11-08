@@ -29,9 +29,9 @@ app.use((req, res, next)=> {
   });
 
 // Routes
-app.get("/", async (req, res)=>{
-    res.send("Hello and welcome.")
-})
+// app.get("/", async (req, res)=>{
+//     res.send("Hello and welcome.")
+// })
 
 
 app.post("/products", async (req, res) => {
