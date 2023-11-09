@@ -7,7 +7,21 @@ import "./index.css"
 const Gallery = ({ productType }) => {
   const { selectedImage, setSelectedImage, productsArray } = useContext(MyContext);
 
+
+
+
   const [mainImage, setMainImage] = useState(""); // State to store the main image
+
+
+
+
+  const  handleClickImage = (url) => {
+    
+    setMainImage(url)
+    console.log(url)
+    console.log("it's working up to here!")
+      }
+
 
   useEffect(() => {
     // Find the first product of the specified productType
@@ -49,7 +63,7 @@ const Gallery = ({ productType }) => {
       </div>
 
       <div className='carousel'>
-        {<Carousel productsArray={filteredProducts} />}
+        {<Carousel productsArray={filteredProducts} handleClickImage={handleClickImage} />}
       </div>
     </div>
   );

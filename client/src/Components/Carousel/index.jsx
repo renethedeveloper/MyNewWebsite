@@ -25,9 +25,9 @@ const responsive = {
 
 
 
-const Carousel = ({children, productsArray}) => {
+const Carousel = ({handleClickImage, productsArray}) => {
 
-    const { setSelectedImage} = useContext(MyContext);
+    // const { setSelectedImage} = useContext(MyContext);
  
    
 
@@ -37,12 +37,6 @@ const Carousel = ({children, productsArray}) => {
     
     
     
-    const  handleImage = (url) => {
-    
-    setSelectedImage(url)
-    console.log(url)
-      }
-
    
     
    
@@ -57,7 +51,7 @@ const productsJsx = productsArray.map((productObject) => {
   return (
     <div key={productObject.id}>
       <h3 className='carouselTitle'>{productObject.name}</h3>
-      <img className='carouselImage' onClick={() => handleImage(productObject.image)} src={productObject.image} alt={productObject.id} />
+      <img className='carouselImage' onClick={() => handleClickImage(productObject.image)} src={productObject.image} alt={productObject.id} />
     </div>
   );
 });
