@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./index.css";
+import SearchBar from '../SearchBar';
 
 
 const NavBar = () => {
@@ -17,6 +18,7 @@ const NavBar = () => {
           <Link className='dropDownMenuItem' to='/products/decor'>Decor</Link>
           <Link className='dropDownMenuItem' to='/products/lighting'>Lighting</Link>
           <Link className='dropDownMenuItem' to='/products/kitchen'>Kitchen</Link>
+          <Link className='dropDownMenuItem' to='/products/furniture'>Furniture</Link>
           <Link className='dropDownMenuItem' to='/products/customSourcing'>Custom Sourcing</Link>
           {/* Click here to go to gallery, we need to set some state in the context so that the gallery knows what kind of product to show.  */}
         </div>
@@ -31,6 +33,7 @@ const NavBar = () => {
       <Link to='/events' className='link'>Events</Link>
       <div>
         <input id='searchBar' placeholder='Search for Anything' className="searchBar" type="text" />
+        <SearchBar/>
       </div>
      
       </div>

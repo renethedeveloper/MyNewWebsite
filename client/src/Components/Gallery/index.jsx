@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useState } from "react";
-import axios from "axios";
 import { MyContext } from "../../Context";
 import Carousel from "../Carousel";
 import "./index.css";
