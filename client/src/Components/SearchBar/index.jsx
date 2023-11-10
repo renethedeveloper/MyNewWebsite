@@ -1,30 +1,46 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import "./index.css"
 
 const SearchBar = ({ productsArray }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
-    const results = items.filter((item) =>
-      item.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setSearchResults(results);
+
+    
+    if (productsArray) {
+      const results = productsArray.filter((item) =>
+        item.title.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setSearchResults(results);
+    }
   };
 
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleSearch}
       />
-      <ul>
-        {searchResults.map((result, index) => (
-          <li key={index}>{result}</li>
-        ))}
-      </ul>
+
+      {searchTerm && (
+        <div className='results-container'>
+          {searchResults.map((result, index) => (
+            <div key={index} className='result-item'>
+              <img
+                src={result.image}
+                alt={result.title}
+                style={{ width: '50px', height: '50px', marginRight: '10px' }}
+              />
+              <p>{result.title} ${result.price}</p>
+             
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

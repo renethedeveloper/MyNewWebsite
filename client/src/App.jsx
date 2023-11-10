@@ -8,6 +8,7 @@ import Contact from './Components/Contact';
 import Home from './Components/Home';
 import EventPage from './Components/EventsPage';
 import About from './Components/About';
+import SearchBar from './Components/SearchBar';
 
 
 
@@ -16,8 +17,11 @@ function App() {
   return (
     <>
       <NavBar />
+     
+      
       <Routes>
         <Route path="/contact" element={<Contact />} />
+       
         <Route path="/about" element={<About />} />
         <Route path="/input" element={<InputProducts />} />
         <Route path="/events" element={<EventPage />} />

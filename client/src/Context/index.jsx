@@ -59,6 +59,7 @@ const ContextProvider = ({ children }) => {
       fetchData();
     }
   }, []);
+ 
 
   // In the value object, you can provide the state and any functions you want to share.
   const contextValue = {
