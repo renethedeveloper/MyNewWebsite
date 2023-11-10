@@ -8,11 +8,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    
     font-size: smaller;
-    
-   
- 
     padding: 10px;
     width: 200px;
     z-index: 1;
@@ -24,8 +20,13 @@
   .result-item {
     
     display: flex;
+    margin: 2px;
     align-items: end;
-    
+}
+#thumbnails{
+    max-height: 150px;
+    max-width: 150px;
+   
   
-  }
+}
   

@@ -12,10 +12,10 @@
 
 
 
-.navbar img {
+.logo{
   max-height: 150px;
   max-width: 150px;
-  /* border-radius: 90px; */
+  border-radius: 90px;
   margin-top: 40px;
   margin-right: 40px;
   margin-left: -10px;

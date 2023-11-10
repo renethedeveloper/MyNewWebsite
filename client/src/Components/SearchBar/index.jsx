@@ -30,7 +30,7 @@ const SearchBar = ({ productsArray }) => {
         <div className='results-container'>
           {searchResults.map((result, index) => (
             <div key={index} className='result-item'>
-              <img
+              <img  id='thumbnails'
                 src={result.image}
                 alt={result.title}
                 style={{ width: '50px', height: '50px', marginRight: '10px' }}
