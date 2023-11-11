@@ -33,7 +33,7 @@ const SearchBar = ({ productsArray }) => {
               <img  id='thumbnails'
                 src={result.image}
                 alt={result.title}
-                style={{ width: '50px', height: '50px', marginRight: '10px' }}
+                style={{ width: '60px', height: '60px', marginRight: '10px' }}
               />
               <p>{result.title} ${result.price}</p>
              

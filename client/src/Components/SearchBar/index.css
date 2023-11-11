@@ -5,10 +5,12 @@
   }
   
   .results-container {
+    background-color: #cbdad7;
     position: absolute;
     top: 100%;
     left: 0;
     font-size: smaller;
+    color: rgb(81, 77, 77);
     padding: 10px;
     width: 200px;
     z-index: 1;
@@ -24,8 +26,8 @@
     align-items: end;
 }
 #thumbnails{
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 160px;
+    max-width: 190px;
    
   
 }
