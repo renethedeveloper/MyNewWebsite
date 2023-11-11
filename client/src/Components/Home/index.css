@@ -40,6 +40,39 @@ height: 300px;
 }
 
 
+/* Styles for the range input */
+input[type="range"] {
+  -webkit-appearance: none; /* Remove default styling on WebKit browsers */
+  width: 100%;
+  height: 10px;
+  background: #d3d3d3; /* Background color of the slider track */
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7; /* Opacity of the entire input */
+  transition: opacity 0.2s;
+}
+
+/* Style for the slider thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling on WebKit browsers */
+  width: 20px;
+  height: 20px;
+  background: black; /* Color of the slider thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Hover effect for the entire input when the user hovers over it */
+input[type="range"]:hover {
+  opacity: 1;
+}
+.flamingos{
+  max-width: 400px;
+  float: right;
+}
+.priceSlide{
+  max-width: 20vw;
+}
 
   
   
