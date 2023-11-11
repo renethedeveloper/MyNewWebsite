@@ -45,7 +45,7 @@ input[type="range"] {
   -webkit-appearance: none; /* Remove default styling on WebKit browsers */
   width: 100%;
   height: 10px;
-  background: #d3d3d3; /* Background color of the slider track */
+  background: #706363; /* Background color of the slider track */
   border-radius: 5px;
   outline: none;
   opacity: 0.7; /* Opacity of the entire input */
@@ -73,6 +73,26 @@ input[type="range"]:hover {
 .priceSlide{
   max-width: 20vw;
 }
+.customSourcing{
+  display: flex;
+ justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  color:#44ba44;
+}
+.sourcingTitle{
+  text-align: center;
+}
+.desiredItem {
+  width: 200px;
+  height: 100px; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: pre-line; 
+  word-wrap: break-word; /
+}
+
+
 
   
   
