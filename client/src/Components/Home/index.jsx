@@ -32,16 +32,26 @@ const Home = () => {
 
   return (
     <div>
-      <img className='mainImage' src="Images/images/showRoomMain.png" alt="showroom" />
-      <img className='map' src="Images/images/mapToShop.png" alt="map" />
-      <p className='directions'>Under Drip Tea Market!!</p>
+  <img className='mainImage' src="Images/images/showRoomMain.png" alt="showroom" />
+  <img className='map' src="Images/images/mapToShop.png" alt="map" />
+  <p className='directions'>Under Drip Tea Market!!</p>
 
-      <div className='gallery'>
-        <img id='galleryImage' src="Images/images/flamingoMirror.jpeg" alt="flamingoMirror" />
-        <img id='galleryImage' src="Images/images/tulipLampsGold.jpeg" alt="tulipLamp" />
-        <img id='galleryImage' src="Images/images/leatherChair.jpeg" alt="leatherChair" />
-      </div>
+  <div className='gallery-container'>
+    <div className='gallery-item'>
+      <img className='galleryImage' src="Images/images/flamingoMirror.jpeg" alt="flamingoMirror" />
+      <h2 className='title'>Decor</h2>
+    </div>
 
+    <div className='gallery-item'>
+      <img className='galleryImage' src="Images/images/tulipLampsGold.jpeg" alt="tulipLamp" />
+      <h2 className='title'>Lighting</h2>
+    </div>
+
+    <div className='gallery-item'>
+      <img className='galleryImage' src="Images/images/leatherChair.jpeg" alt="leatherChair" />
+      <h2 className='title'>Furniture</h2>
+    </div>
+  </div>
       <div className='mainSourceFormDiv'>
         <h1 className='sourcingTitle'>Looking for anything in particular? Tell us and we can custom source for you!</h1>
         <div className='customSourcing'>

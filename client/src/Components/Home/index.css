@@ -1,27 +1,40 @@
 .mainImage {
-    margin-top: 25px;
-    width: 90vw;
-    margin-left: 50px; 
-    height: 598px;
-    box-shadow: 2px 2px 10px 2px gray;
-}
-#galleryImage{
-height: 300px;
-  width: 300px;
+  margin-top: 25px;
+  width: 90vw;
+  margin-left: 50px; 
+  height: 598px;
   box-shadow: 2px 2px 10px 2px gray;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
   position: relative;
 }
 
-
-
-.gallery{
-  display: flex;
-
-  justify-content: space-around;
-  align-items: start;
-  
+.gallery-item {
+  text-align: center;
+  position: relative;
 }
-.map{
+
+.galleryImage {
+  max-width: 300px; 
+  max-height: 300px;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 3em;
+  position: absolute;
+  color: #44ba44;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.map {
   margin-top: 30px;
   position: relative;
   display: flex;
@@ -30,7 +43,8 @@ height: 300px;
   margin-bottom: 30px;
   box-shadow: 2px 2px 10px 2px gray;
 }
-.directions{
+
+.directions {
   display: flex;
   top: 1063px;
   position: absolute;
@@ -40,59 +54,33 @@ height: 300px;
 }
 
 
-/* Styles for the range input */
-input[type="range"] {
-  -webkit-appearance: none; /* Remove default styling on WebKit browsers */
-  width: 100%;
-  height: 10px;
-  background: #706363; /* Background color of the slider track */
-  border-radius: 5px;
-  outline: none;
-  opacity: 0.7; /* Opacity of the entire input */
-  transition: opacity 0.2s;
-}
-
-/* Style for the slider thumb (handle) */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Remove default styling on WebKit browsers */
-  width: 20px;
-  height: 20px;
-  background: black; /* Color of the slider thumb */
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Hover effect for the entire input when the user hovers over it */
-input[type="range"]:hover {
-  opacity: 1;
-}
-.flamingos{
+.flamingos {
   max-width: 400px;
   float: right;
 }
-.priceSlide{
+
+.priceSlide {
   max-width: 20vw;
 }
-.customSourcing{
+
+.customSourcing {
   display: flex;
- justify-content: space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   padding: 10px;
-  color:#44ba44;
+  color: #44ba44;
 }
-.sourcingTitle{
+
+.sourcingTitle {
   text-align: center;
+  color: #44ba44;
 }
+
 .desiredItem {
   width: 200px;
   height: 100px; 
   overflow: hidden; 
   text-overflow: ellipsis; 
   white-space: pre-line; 
-  word-wrap: break-word; /
+  word-wrap: break-word;
 }
-
-
-
-  
-  
