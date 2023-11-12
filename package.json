@@ -8,5 +8,9 @@
     "servers": "concurrently \"cd backend && node --watch --env-file .env server.js\" \"cd client && npm run dev\" "
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "nodemailer": "^6.9.7"
+  }
 }
