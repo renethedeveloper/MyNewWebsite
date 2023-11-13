@@ -40,8 +40,7 @@ app.post("/submitForm", async (req, res) => {
           Looked For Item: ${lookedForItem}
         `,
       };
-  
-      const info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
       console.log("Email sent", info.response);
       res.status(200).send("Form submitted successfully!");
     } catch (error) {
@@ -54,16 +53,17 @@ app.post("/submitForm", async (req, res) => {
 
 
 
-
-
-
-
 app.use((req, res, next) => {
   if (req.path.startsWith("/server")) {
     req.url = req.url.replace("/server", ""); // strip /server from the path
   }
   next();
 });
+
+
+
+
+
 
 app.post("/products", async (req, res) => {
   try {
@@ -92,6 +92,10 @@ app.get("/products", async (req, res) => {
   }
 });
 
+
+
+
+
 app.get("/products/:id", async (req, res) => {
   const id = req.params.id;
   try {
@@ -107,10 +111,17 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
+
+
+
+
 app.use((err, req, res, next) => {
     console.error("Error:", err);
     res.status(500).send("Internal Server Error");
   });
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
