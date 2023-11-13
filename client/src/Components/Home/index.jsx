@@ -32,8 +32,8 @@ const Home = () => {
     e.preventDefault();
     console.log(sourcingData)
     axios({
-      method: "post",
-      url: "/server/submitForm",
+      method: "POST",
+      url: "http://localhost:3000/submitForm",
       data: sourcingData,
     })
       .then((response) => {
