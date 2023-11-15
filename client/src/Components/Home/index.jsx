@@ -98,8 +98,8 @@ const Home = () => {
       <Link to="/products/kitchen">
         <img
           className="galleryImage"
-          src="Images/images/MemphisTeaSet.jpg"
-          alt="teaSet"
+          src="Images/images/memphisMug.jpeg"
+          alt="mug"
         />
         <h2 className="title">Kitchen</h2>
       </Link>

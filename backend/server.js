@@ -51,6 +51,10 @@ app.post("/submitForm", async (req, res) => {
           Looked For Item: ${lookedForItem}
         `,
       };
+
+
+
+
     const info = await transporter.sendMail(mailOptions);
       console.log("Email sent", info.response);
       res.status(200).send("Form submitted successfully!");
@@ -100,13 +104,14 @@ app.get("/products", async (req, res) => {
 
 
 
-
 app.get("/products/:id", async (req, res) => {
     const id = req.params.id;
   
-    if (id === "favicon.ico" && id == {productType}) {
-      
+    // Check if id is to be ignored
+    if (id === "favicon.ico" || id === "decor" || id === "kitchen"|| id === "furniture"|| id === "lighting") {
+       
       return res.status(204).end();
+      window.location.reload();
     }
   
     try {
@@ -121,6 +126,7 @@ app.get("/products/:id", async (req, res) => {
       res.status(500).send("An error occurred while fetching the product");
     }
   });
+  
   
 
 

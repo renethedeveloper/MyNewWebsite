@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import "./index.css"
+import { Link } from 'react-router-dom';
 
 const SearchBar = ({ productsArray }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -8,7 +9,6 @@ const SearchBar = ({ productsArray }) => {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
 
-    
     if (productsArray) {
       const results = productsArray.filter((item) =>
         item.title.toLowerCase().includes(event.target.value.toLowerCase())
@@ -29,15 +29,15 @@ const SearchBar = ({ productsArray }) => {
       {searchTerm && (
         <div className='results-container'>
           {searchResults.map((result, index) => (
-            <div key={index} className='result-item'>
-              <img  id='thumbnails'
+            <Link key={index} to={`/products/${result.type}`} className='result-item'>
+              <img
+                id='thumbnails'
                 src={result.image}
                 alt={result.title}
                 style={{ width: '60px', height: '60px', marginRight: '10px' }}
               />
               <p>{result.title} ${result.price}</p>
-             
-            </div>
+            </Link>
           ))}
         </div>
       )}
