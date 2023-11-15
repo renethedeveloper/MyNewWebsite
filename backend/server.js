@@ -26,12 +26,12 @@ app.use(express.static(path.join(__dirname, "dist")));
 
 
 
-app.use((req, res, next) => {
-    if (req.path.startsWith("/server")) {
-      req.url = req.url.replace("/server", ""); 
-    }
-    next();
-  });
+        app.use((req, res, next) => {
+            if (req.path.startsWith("/server")) {
+            req.url = req.url.replace("/server", ""); 
+            }
+            next();
+        });
 
 
 

@@ -34,9 +34,8 @@ const Home = () => {
     console.log(sourcingData);
   
     try {
-      
-      const response = await axios.post("http://localhost:3000/server/submitForm", sourcingData);
-      console.log("we got this far.");
+      const response = await axios.post("/submitForm", sourcingData);
+      console.log(response.data, "Got this far");
       alert(`Thank you ${sourcingData.name}! We have received your information.`);
   
       setSourcingData({
@@ -115,7 +114,7 @@ const Home = () => {
         <div className="customSourcing">
           <div className="sourceForm">
             <form
-              action="http://localhost:3000/server/submitForm"
+              action="http://localhost:3000/submitForm"
               method="post"
               onSubmit={handleSubmit}
             >
