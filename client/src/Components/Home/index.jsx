@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [sourcingData, setSourcingData] = useState({
@@ -28,73 +29,84 @@ const Home = () => {
     setSourcingData({ ...sourcingData, lookedForItem: event.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(sourcingData)
-    axios({
-      method: "POST",
-      url: "http://localhost:3000/server/submitForm",
-      data: sourcingData,
-    })
-      .then((response) => {
-        console.log(response);
-        console.log("we got this far.");
-
-        alert(
-          `Thank you ${sourcingData.name}! We have received your information.`
-        );
-
-        setSourcingData({
-          name: "",
-          email: "",
-          priceRange: 0,
-          lookedForItem: "",
-        });
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        alert("Oops! Something went wrong. Please try again later.");
+    console.log(sourcingData);
+  
+    try {
+      
+      const response = await axios.post("http://localhost:3000/server/submitForm", sourcingData);
+      console.log("we got this far.");
+      alert(`Thank you ${sourcingData.name}! We have received your information.`);
+  
+      setSourcingData({
+        name: "",
+        email: "",
+        priceRange: 0,
+        lookedForItem: "",
       });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Oops! Something went wrong. Please try again later.");
+    }
   };
-
+  
   return (
     <div>
-      <img
-        className="mainImage"
-        src="Images/images/showRoomMain.png"
-        alt="showroom"
-      />
-      <img className="map" src="Images/images/mapToShop.png" alt="map" />
-      <p className="directions">Under Drip Tea Market!!</p>
+  <img
+    className="mainImage"
+    src="Images/images/showRoomMain.png"
+    alt="showroom"
+  />
+  <img className="map" src="Images/images/mapToShop.png" alt="map" />
+  <p className="directions">Under Drip Tea Market!!</p>
 
-      <div className="gallery-container">
-        <div className="gallery-item">
-          <img
-            className="galleryImage"
-            src="Images/images/flamingoMirror.jpeg"
-            alt="flamingoMirror"
-          />
-          <h2 className="title">Decor</h2>
-        </div>
+  <div className="gallery-container">
+    <div className="gallery-item">
+      <Link to='/products/decor'>
+        <img
+          className="galleryImage"
+          src="Images/images/flamingoMirror.jpeg"
+          alt="flamingoMirror"
+        />
+        <h2 className="title">Decor</h2>
+      </Link>
+    </div>
 
-        <div className="gallery-item">
-          <img
-            className="galleryImage"
-            src="Images/images/tulipLampsGold.jpeg"
-            alt="tulipLamp"
-          />
-          <h2 className="title">Lighting</h2>
-        </div>
+    <div className="gallery-item">
+      <Link to="/products/lighting">
+        <img
+          className="galleryImage"
+          src="Images/images/PurpleLamp.webp"
+          alt="tulipLamp"
+        />
+        <h2 className="title">Lighting</h2>
+      </Link>
+    </div>
 
-        <div className="gallery-item">
-          <img
-            className="galleryImage"
-            src="Images/images/leatherChair.jpeg"
-            alt="leatherChair"
-          />
-          <h2 className="title">Furniture</h2>
-        </div>
-      </div>
+    <div className="gallery-item">
+      <Link to="/products/furniture">
+        <img
+          className="galleryImage"
+          src="Images/images/leatherChair.jpeg"
+          alt="leatherChair"
+        />
+        <h2 className="title">Furniture</h2>
+      </Link>
+    </div>
+    <div className="gallery-item">
+      <Link to="/products/kitchen">
+        <img
+          className="galleryImage"
+          src="Images/images/MemphisTeaSet.jpg"
+          alt="teaSet"
+        />
+        <h2 className="title">Kitchen</h2>
+      </Link>
+    </div>
+  </div>
+
+
       <div className="mainSourceFormDiv">
         <h1 className="sourcingTitle">
           Looking for anything in particular? Tell us and we can custom source
@@ -103,7 +115,7 @@ const Home = () => {
         <div className="customSourcing">
           <div className="sourceForm">
             <form
-              action="http://localhost:3000/submitForm"
+              action="http://localhost:3000/server/submitForm"
               method="post"
               onSubmit={handleSubmit}
             >
@@ -175,7 +187,7 @@ const Home = () => {
           <div>
             <img
               className="flamingos"
-              src="/public/Images/images/Flamingos.jpeg"
+              src="/Images/images/Flamingos.jpeg"
               alt="flamingos"
             />
           </div>

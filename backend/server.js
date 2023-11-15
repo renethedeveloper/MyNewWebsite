@@ -25,6 +25,17 @@ app.use(express.static(path.join(__dirname, "dist")));
 
 
 
+
+app.use((req, res, next) => {
+    if (req.path.startsWith("/server")) {
+      req.url = req.url.replace("/server", ""); 
+    }
+    next();
+  });
+
+
+
+
 app.post("/submitForm", async (req, res) => {
     try {
       const { name, email, priceRange, lookedForItem } = req.body;
@@ -53,12 +64,6 @@ app.post("/submitForm", async (req, res) => {
 
 
 
-app.use((req, res, next) => {
-  if (req.path.startsWith("/server")) {
-    req.url = req.url.replace("/server", ""); // strip /server from the path
-  }
-  next();
-});
 
 
 
@@ -88,7 +93,7 @@ app.get("/products", async (req, res) => {
     console.log(productArray);
   } catch (error) {
     console.error("Error fetching products:", error);
-    res.status(500).send("An error occurred while fetching products");
+    res.status(500).send("An error occurred while fetching goods.");
   }
 });
 
@@ -97,28 +102,35 @@ app.get("/products", async (req, res) => {
 
 
 app.get("/products/:id", async (req, res) => {
-  const id = req.params.id;
-  try {
-    const product = await Product.findById(id);
-    if (!product) {
-      res.status(404).send("Product not found");
-    } else {
-      res.json(product);
+    const id = req.params.id;
+  
+    if (id === "favicon.ico" && id == {productType}) {
+      
+      return res.status(204).end();
     }
-  } catch (error) {
-    console.error("Error fetching product:", error);
-    res.status(500).send("An error occurred while fetching the product");
-  }
-});
-
-
-
-
-
-app.use((err, req, res, next) => {
-    console.error("Error:", err);
-    res.status(500).send("Internal Server Error");
+  
+    try {
+      const product = await Product.findById(id);
+      if (!product) {
+        res.status(404).send("Product not found");
+      } else {
+        res.json(product);
+      }
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      res.status(500).send("An error occurred while fetching the product");
+    }
   });
+  
+
+
+
+
+
+// app.use((err, req, res, next) => {
+//     console.error("Error:", err);
+//     res.status(500).send("Internal Server Error");
+//   });
 
 
 
