@@ -43,8 +43,8 @@ app.post("/submitForm", async (req, res) => {
       console.log(req.body)
   
       const mailOptions = {
-        from: "afuereno@yahoo.com",
-        to: "afuereno@yahoo.com",
+        from: mail,
+        to: "afuereno@gmail.com",
         subject: "New Form Submission",
         text: `
           Name: ${name}
