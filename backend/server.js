@@ -26,23 +26,25 @@ app.use(express.static(path.join(__dirname, "dist")));
 
 
 
-        app.use((req, res, next) => {
-            if (req.path.startsWith("/server")) {
-            req.url = req.url.replace("/server", ""); 
-            }
-            next();
-        });
+        // app.use((req, res, next) => {
+        //     if (req.path.startsWith("/server")) {
+        //     req.url = req.url.replace("/server", ""); 
+        //     }
+        //     next();
+        // });
 
 
 
 
 app.post("/submitForm", async (req, res) => {
+    console.log("Marker")
     try {
       const { name, email, priceRange, lookedForItem } = req.body;
+      console.log(req.body)
   
       const mailOptions = {
-        from: email,
-        to: "afuereno@gmail.com",
+        from: "afuereno@yahoo.com",
+        to: "afuereno@yahoo.com",
         subject: "New Form Submission",
         text: `
           Name: ${name}
@@ -51,12 +53,15 @@ app.post("/submitForm", async (req, res) => {
           Looked For Item: ${lookedForItem}
         `,
       };
+      console.log("Marker2")
+     
 
 
 
 
     const info = await transporter.sendMail(mailOptions);
       console.log("Email sent", info.response);
+      
       res.status(200).send("Form submitted successfully!");
     } catch (error) {
       console.error(error);

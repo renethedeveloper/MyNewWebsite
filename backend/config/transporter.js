@@ -4,7 +4,7 @@ require('dotenv').config();
 
 // Create reusable transporter object using the SMTP transport and values from .env file
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "yahoo",
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
