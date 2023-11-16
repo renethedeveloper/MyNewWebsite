@@ -10,7 +10,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/server/products");
+        const response = await axios.get("/products");
         console.log(response.data, "We got the goods!");
         setProductsArray(response.data);
         localStorage.setItem("products", JSON.stringify(response.data));

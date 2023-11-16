@@ -34,7 +34,7 @@ const Home = () => {
     console.log(sourcingData);
   
     try {
-      const response = await axios.post("/submitForm", sourcingData);
+      const response =  axios.post("/submitForm", sourcingData);
       console.log(response.data, "Got this far");
       alert(`Thank you ${sourcingData.name}! We have received your information.`);
   

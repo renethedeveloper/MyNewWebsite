@@ -108,7 +108,7 @@ app.get("/products/:id", async (req, res) => {
     const id = req.params.id;
   
     // Check if id is to be ignored
-    if (id === "favicon.ico" || id === "decor" || id === "kitchen"|| id === "furniture"|| id === "lighting") {
+    if (id === "decor" || id === "kitchen"|| id === "furniture"|| id === "lighting") {
        
       return res.status(204).end();
       window.location.reload();
