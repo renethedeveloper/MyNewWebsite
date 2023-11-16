@@ -11,7 +11,7 @@ const reactRoot = createRoot(root);
 reactRoot.render(
   <React.StrictMode>
     <ContextProvider>
-      <BrowserRouter>
+      <BrowserRouter  >
         <App />
       </BrowserRouter>
     </ContextProvider>

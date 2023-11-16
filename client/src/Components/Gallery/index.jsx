@@ -16,6 +16,7 @@ const Gallery = ({ productType }) => {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0)
     // Find the first product of the specified productType
     const firstProduct = productsArray.find((product) => product.type === productType);
 
