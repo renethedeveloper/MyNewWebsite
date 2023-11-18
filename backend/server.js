@@ -3,13 +3,13 @@ const cors = require("cors");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
-const nodemailer = require("nodemailer");
+
 
 const Product = require("./models/index.jsx");
 require("dotenv").config();
 require("./config");
 const path = require("path");
-const transporter = require('./config/transporter.js');
+const transporter = require("./config/transporter.js");
 
 const PORT = 3000;
 const app = express();
@@ -26,15 +26,6 @@ app.use(express.static(path.join(__dirname, "dist")));
 
 
 
-        // app.use((req, res, next) => {
-        //     if (req.path.startsWith("/server")) {
-        //     req.url = req.url.replace("/server", ""); 
-        //     }
-        //     next();
-        // });
-
-
-
 
 app.post("/submitForm", async (req, res) => {
     console.log("Marker")
@@ -43,8 +34,8 @@ app.post("/submitForm", async (req, res) => {
       console.log(req.body)
   
       const mailOptions = {
-        from: email,
-        to: "afuereno@yahoo.com",
+        from: '"Rene" <afuereno@yahoo.com>',
+        to: "afuereno@gmail.com",
         subject: "New Form Submission",
         text: `
           Name: ${name}
