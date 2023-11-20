@@ -26,6 +26,7 @@ function App() {
         <Route path="/input" element={<InputProducts />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/" element={<Home />} />
+        <Route path="/products/:productType/:productId" component={Gallery} />
         <Route path="/products/kitchen" element={<Gallery productType="Kitchen" />} />
         <Route path="/products/lighting" element={<Gallery productType="Lighting" />} />
         <Route path="/products/decor" element={<Gallery productType="Decor" />} />

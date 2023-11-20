@@ -3,32 +3,38 @@ import { MyContext } from "../../Context";
 import Carousel from "../Carousel";
 import "./index.css";
 
+
 const Gallery = ({ productType }) => {
-  const { selectedImage, setSelectedImage, productsArray } = useContext(MyContext);
-
-  const [selectedProduct, setSelectedProduct] = useState(null); // State for the selected product
-
-  const [mainImage, setMainImage] = useState(""); // State to store the main image
+  
+  const { setSelectedImage, selectedImage, productsArray, selectedProduct, setSelectedProduct } = useContext(MyContext);
 
   const handleClickImage = (product) => {
     setSelectedProduct(product);
-    setMainImage(product.image);
+    setSelectedImage(product.image);
   };
 
   useEffect(() => {
-    window.scrollTo(0,0)
-    // Find the first product of the specified productType
-    const firstProduct = productsArray.find((product) => product.type === productType);
-
-    // Set the main image and selected product to the first product, if it exists
-    if (firstProduct) {
-      setSelectedProduct(firstProduct);
-      setMainImage(firstProduct.image);
+    window.scrollTo(0, 0);
+  
+    // Check if a product is selected from the SearchBar
+    if (selectedProduct && selectedProduct.type === productType) {
+      setSelectedImage(selectedProduct.image);
     } else {
-      setSelectedProduct(null);
-      setMainImage(""); // No product found for the productType
+      // Find the first product of the specified productType
+      const firstProduct = productsArray.find((product) => product.type === productType);
+  
+      // Set the selected product to the first product, if it exists
+      if (firstProduct) {
+        setSelectedProduct(firstProduct);
+        setSelectedImage(firstProduct.image);
+      } else {
+        setSelectedProduct(null);
+        setSelectedImage(""); // No product found for the productType
+      }
     }
-  }, [productsArray, productType]);
+  }, [productsArray, productType, setSelectedProduct, setSelectedImage, selectedProduct]);
+  
+  
 
   const filteredProducts = productsArray.filter((product) => product.type === productType);
 
@@ -38,7 +44,7 @@ const Gallery = ({ productType }) => {
         <div className="Title">{productType}</div>
 
         <div className="mainPic">
-          <img className="image" src={mainImage} alt="mainImage" />
+          <img className="image" src={selectedImage} alt="mainImage" />
         </div>
 
         {selectedProduct && (

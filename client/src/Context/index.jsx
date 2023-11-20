@@ -6,6 +6,8 @@ export const MyContext = React.createContext();
 const ContextProvider = ({ children }) => {
   const [productsArray, setProductsArray] = useState([]);
   const [selectedImage, setSelectedImage] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [mainImage, setMainImage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,6 +36,10 @@ const ContextProvider = ({ children }) => {
     productsArray,
     selectedImage,
     setSelectedImage,
+    setSelectedProduct,
+    setMainImage,
+    selectedProduct,
+    mainImage,
   };
 
   return (
