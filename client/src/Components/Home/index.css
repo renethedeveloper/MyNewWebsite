@@ -55,34 +55,4 @@
   right: 192px;
 }
 
-
-.flamingos {
-  max-width: 400px;
-  float: right;
-}
-
-.priceSlide {
-  max-width: 20vw;
-}
-
-.customSourcing {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-  color: #44ba44;
-}
-
-.sourcingTitle {
-  text-align: center;
-  color: #44ba44;
-}
-
-.desiredItem {
-  width: 200px;
-  height: 100px; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: pre-line; 
-  word-wrap: break-word;
-}
+  
