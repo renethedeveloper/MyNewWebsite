@@ -21,6 +21,7 @@ function App() {
       
       <Routes>
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<CustomSourcing />} />
        
         <Route path="/about" element={<About />} />
         <Route path="/input" element={<InputProducts />} />
