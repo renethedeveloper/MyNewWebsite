@@ -1,11 +1,11 @@
 .search-container {
     position: relative;
     display: inline-block;
-    background-color: none !important;
+    background-color: pink;
   }
   
   .results-container {
-    background-color: #cbdad7;
+    background-color: #c7e4d7;
     position: absolute;
     top: 100%;
     left: 0;

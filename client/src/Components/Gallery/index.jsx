@@ -54,7 +54,7 @@ const Gallery = ({ productType }) => {
             <br />
             <br />
             <br />
-            <p className="price">Price: {selectedProduct.price}</p>
+            <p className="price">Price: $ {selectedProduct.price}</p>
           </div>
         )}
 

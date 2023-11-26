@@ -10,7 +10,8 @@
 
 .price{
   /* background-color: #000001; */
-  color: #E47DC1;
+  border-bottom: 2px solid #8E3A8B;
+ 
 }
 .mainPic{
   grid-column: span 1;
@@ -26,8 +27,10 @@
   .paymentOptions{
     grid-column: 2;
     grid-row: 3;
-    color:#E47DC1;
-    /* background-color: #000001 ; */
+    color:rgb(40, 38, 38);
+    border-bottom: 2px solid #8E3A8B;
+   
+  
    
 }
 .paymentOptions div{
@@ -35,8 +38,8 @@
   height: 70%;
   width: 80%;
   color:#E47DC1;
+  border-bottom: 2px solid #8E3A8B;
   
-  /* background-color:  #000001 ; */
 }
 
 .specs{

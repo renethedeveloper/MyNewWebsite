@@ -38,9 +38,7 @@ const Carousel = ({ productsArray, selectedProduct, handleClickImage }) => {
       <AliceCarousel mouseTracking items={productsJsx} responsive={responsive} controlsStrategy="alternate" />
       {selectedProduct && (
         <div className="selectedProductDetails">
-          <h4 className="productTitle">{selectedProduct.title}</h4>
-          <h3 className="productDescription">{selectedProduct.description}</h3>
-          <p className="price">Price: {selectedProduct.price}</p>
+    
         </div>
       )}
     </div>
