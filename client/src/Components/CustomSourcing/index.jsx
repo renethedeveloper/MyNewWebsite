@@ -32,7 +32,7 @@ const CustomSourcing = () => {
     console.log(sourcingData);
   
     try {
-      const response = await axios.post("http://localhost/submitForm", sourcingData);
+      const response = await axios.post("http://localhost:3000/submitForm", sourcingData);
       console.log(response.data, "Got this far");
       alert(`Thank you ${sourcingData.name}! We have received your information.`);
   
