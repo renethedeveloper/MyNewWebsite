@@ -13,7 +13,7 @@ const About = () => {
 While vintage decor is her profession, cats hold a special place in Kristy's heart. Her home is a sanctuary for feline friends, where she showers them with love and affection. Kristy's Instagram feed is a delightful mix of her vintage finds and adorable cat antics. She firmly believes that a house isn't a home without the pitter-patter of little cat feet.
 
 Kristy's life took a romantic turn when she met Rene, a man as ridiculously handsome as the vintage decor she adores. Their shared love for antiquing and exploring flea markets brought them together. Rene's charming personality perfectly complements Kristy's quirkiness, making them an inseparable pair. Together, they're a dynamic duo, scouring vintage shops, attending auctions, and turning old relics into cherished treasures.</p>
-        <img className='picKristy' src="Images/images/KristyPic.png" alt="kristyPic" />
+        <img className='picKristy' src="Images/KristyPic.png" alt="kristyPic" />
     
     </div>
   )

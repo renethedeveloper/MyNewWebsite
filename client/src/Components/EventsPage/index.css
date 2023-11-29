@@ -25,26 +25,25 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #CCCCFF;
+    background-image: url( "Images/Nagel bare back.jpeg");
     /* background-image: url("public/images/Screenshot 2023-09-09 at 5.32.54 PM.png"); */
     background-size: cover;
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    width: 30%;
+    width: 40%;
     height: 70%;
-    top: 50%;
+    top: 40%;
     left:55%;
-    background-color:#CCCCFF;
     border: solid black 15px;
     z-index: 1;
    
 }
 .eventList{
-    background-color: #CCCCFF;
+    /* background-color: rgb(24, 208, 143); */
 }
 .eventListItem{
-    background-color: #CCCCFF;
+    background-color: #0fe7bc;
 }
 
 

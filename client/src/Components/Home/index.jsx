@@ -17,10 +17,10 @@ const Home = () => {
     <div>
       <img
         className="mainImage"
-        src="Images/images/showRoomMain.png"
+        src="Images/showRoomMain.png"
         alt="showroom"
       />
-      <img className="map" src="Images/images/mapToShop.png" alt="map" />
+      <img className="map" src="Images/mapToShop.png" alt="map" />
       <p className="directions">Under Drip Tea Market!!</p>
 
       <div className="gallery-container">
@@ -28,7 +28,7 @@ const Home = () => {
           <Link to='/products/decor'>
             <img
               className="galleryImage"
-              src="Images/images/flamingoMirror.jpeg"
+              src="Images/flamingoMirror.jpeg"
               alt="flamingoMirror"
             />
             <h2 className="title">Decor</h2>
@@ -39,7 +39,7 @@ const Home = () => {
           <Link to="/products/lighting">
             <img
               className="galleryImage"
-              src="Images/images/PurpleLamp.webp"
+              src="Images/tulipLampsGold.jpeg"
               alt="tulipLamp"
             />
             <h2 className="title">Lighting</h2>
@@ -50,7 +50,7 @@ const Home = () => {
           <Link to="/products/furniture">
             <img
               className="galleryImage"
-              src="Images/images/leatherChair.jpeg"
+              src="Images/leatherChair.jpeg"
               alt="leatherChair"
             />
             <h2 className="title">Furniture</h2>
@@ -61,7 +61,7 @@ const Home = () => {
           <Link to="/products/kitchen">
             <img
               className="galleryImage"
-              src="Images/images/memphisMug.jpeg"
+              src="Images/glassTable.jpeg"
               alt="mug"
             />
             <h2 className="title">Kitchen</h2>

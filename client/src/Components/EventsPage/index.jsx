@@ -4,9 +4,9 @@ import "./index.css"
 const EventPage = () => {
   return (
       <div>
-        <h1 className='eventTitle'>Events</h1>
+      
         <div className='container'>
-            <img id='drawnKristy' src="/public/Images/images/DrawnKristy.jpg" alt="drawnKristy" />
+            <img id='drawnKristy' src="/Images/DrawnKristy.jpg" alt="drawnKristy" />
             <div className='eventBox'>
               <ul className='eventList'>
               <li>NightMarket</li>

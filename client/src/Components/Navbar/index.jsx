@@ -23,7 +23,7 @@ const NavBar = () => {
       </div>
       <Link to='/contact' className="contact link">Contact</Link>
       <Link to="/">
-        <img className='logo' src="Images/images/OldLogo.png" alt="dreampoplogo" />
+        <img className='logo' src="Images/OldLogo.png" alt="dreampoplogo" />
       </Link>
       <div className='search-bar-container'>
 

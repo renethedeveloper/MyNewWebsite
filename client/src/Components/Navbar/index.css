@@ -1,5 +1,5 @@
 .navbar {
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
   display: flex;
   justify-content: space-around;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
@@ -20,17 +20,17 @@
 }
 
 .navbar .links {
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
 }
 .link[href="/faq"],
 .link[href="/events"] {
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
   display: flex;
   align-items: center;
 }
 
 .link:visited {
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
 }
 
 * {
@@ -48,7 +48,7 @@
 
 .dropdown {
   position: relative;
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
   display: inline-block;
   background-color: transparent;
   border: none;
@@ -73,7 +73,7 @@
 
 .dropdown-content a:hover {
   /* background-color: #ddd; */
-  background-color: rgba(202, 197, 197, 0.5);
+  background-color: rgba(255, 255, 255, 0.5)
 }
 
 .dropdown:hover .dropdown-content {
@@ -84,7 +84,7 @@
   background-color: black;
 } */
 .dropDownMenuItem {
-  color: #e47dc1;
+  color: rgb(130, 6, 147);
 }
 .faq {
   margin-right: 40px;

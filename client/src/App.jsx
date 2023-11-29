@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import EventPage from './Components/EventsPage';
 import About from './Components/About';
 import SearchBar from './Components/SearchBar';
+import FAQ from './Components/FAQ';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<CustomSourcing />} />
        
         <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/input" element={<InputProducts />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/" element={<Home />} />

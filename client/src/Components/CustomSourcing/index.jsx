@@ -122,13 +122,13 @@ const CustomSourcing = () => {
             </button>
           </form>
         </div>
-        <div>
+        {/* <div>
           <img
             className="flamingos"
             src="/Images/images/Flamingos.jpeg"
             alt="flamingos"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
