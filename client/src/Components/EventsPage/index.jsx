@@ -1,9 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { MyContext } from '../../Context';
 import "./index.css";
 
 const EventPage = () => {
-  const { eventData } = useContext(MyContext);
+  const { eventData, setEventData } = useContext(MyContext);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get("/server/events");
+        setEventData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+        // Handle the error (e.g., show a message to the user)
+      }
+    };
+
+    fetchEvents();
+  }, [setEventData]);
+
+  if (loading) {
+    return <p>Loading events...</p>;
+  }
 
   return (
     <div>

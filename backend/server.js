@@ -100,6 +100,18 @@ app.get("/products", async (req, res) => {
 
 
 
+app.get("/events", async (req, res) => {
+  try {
+    const eventArray = await Event.find();
+    res.json(eventArray);
+    console.log(eventArray);
+  } catch (error) {
+    console.error("Error fetching Events:", error);
+    res.status(500).send("An error occurred while fetching events.");
+  }
+});
+
+
 app.get("/products/:id", async (req, res) => {
     const id = req.params.id;
   
