@@ -8,6 +8,7 @@ const ContextProvider = ({ children }) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [mainImage, setMainImage] = useState("");
+  const [eventData, setEventData] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,21 @@ const ContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    const fetchEventData = async () => {
+      try {
+        const response = await axios.get("/events");
+        console.log(response.data, "Event data fetched!");
+        setEventData(response.data);
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+      }
+    };
+
+    fetchEventData();
+  }, []);
+
+
+  useEffect(() => {
     // This effect will run when productsArray changes.
     localStorage.setItem("products", JSON.stringify(productsArray));
   }, [productsArray]);
@@ -35,6 +51,8 @@ const ContextProvider = ({ children }) => {
   const contextValue = {
     productsArray,
     selectedImage,
+    eventData,
+    setEventData,
     setSelectedImage,
     setSelectedProduct,
     setMainImage,

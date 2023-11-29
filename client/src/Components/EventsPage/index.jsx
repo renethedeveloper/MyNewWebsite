@@ -1,27 +1,25 @@
-import React from 'react'
-import "./index.css"
+import React, { useContext } from 'react';
+import { MyContext } from '../../Context';
+import "./index.css";
 
 const EventPage = () => {
+  const { eventData } = useContext(MyContext);
+
   return (
-      <div>
-      
-        <div className='container'>
-            <img id='drawnKristy' src="/Images/DrawnKristy.jpg" alt="drawnKristy" />
-            <div className='eventBox'>
-              <ul className='eventList'>
-              <li>NightMarket</li>
-              <br />
-            <li className='eventListItem'>NightMarket 2: Shady sisters</li>
-            <br />
-            <li>Pop-Up Sunday</li>
-            <br />
-            <li>Pop UP</li>
-            </ul></div>
+    <div>
+      <div className='container'>
+        <img id='drawnKristy' src="/Images/DrawnKristy.jpg" alt="drawnKristy" />
+        <div className='eventBox'>
+          {eventData.map((event) => (
+            <div key={event.id} className='eventItem'>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+            </div>
+          ))}
         </div>
-        </div>
-     
-    
-  )
+      </div>
+    </div>
+  );
 }
 
-export default EventPage
+export default EventPage;
