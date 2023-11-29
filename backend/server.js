@@ -5,7 +5,9 @@ const helmet = require("helmet");
 const bodyParser = require("body-parser");
 
 
-const Product = require("./models/index.jsx");
+const Product = require("./models/Product.jsx");
+const Event = require("./models/Event.jsx");
+
 require("dotenv").config();
 require("./config");
 const path = require("path");
@@ -96,7 +98,6 @@ app.get("/products", async (req, res) => {
     res.status(500).send("An error occurred while fetching goods.");
   }
 });
-
 
 
 

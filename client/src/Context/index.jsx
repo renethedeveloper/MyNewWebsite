@@ -8,28 +8,28 @@ const ContextProvider = ({ children }) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [mainImage, setMainImage] = useState("");
-  const [eventData, setEventData] = useState("")
+  const [eventData, setEventData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/products");
-        console.log(response.data, "We got the goods!");
         setProductsArray(response.data);
+        setEventData(response.data); // Add setEventData to the dependency array
         localStorage.setItem("products", JSON.stringify(response.data));
       } catch (error) {
         console.error("Error fetching data:", error);
-        // Handle the error (e.g., show a message to the user)
       }
     };
-
-    // ...
-
+  
     fetchData();
   }, []);
+  
 
+
+  
   useEffect(() => {
-    const fetchEventData = async () => {
+    const fetchData = async () => {
       try {
         const response = await axios.get("/events");
         console.log(response.data, "Event data fetched!");
@@ -39,7 +39,7 @@ const ContextProvider = ({ children }) => {
       }
     };
 
-    fetchEventData();
+    fetchData();
   }, []);
 
 
