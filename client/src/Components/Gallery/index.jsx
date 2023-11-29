@@ -26,7 +26,7 @@ const Gallery = ({ productType }) => {
       // Set the selected product to the first product, if it exists
       if (firstProduct) {
         setSelectedProduct(firstProduct);
-        setSelectedImage(firstProduct.image);
+        setSelectedImage(firstProduct.image[0]);
       } else {
         setSelectedProduct(null);
         setSelectedImage(""); // No product found for the productType

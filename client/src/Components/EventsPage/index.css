@@ -42,8 +42,10 @@
 .eventList{
     /* background-color: rgb(24, 208, 143); */
 }
-.eventListItem{
-    background-color: #0fe7bc;
+.eventItem{
+    background-color: black;
+    color: rgb(117, 255, 179);
+  
 }
 
 
