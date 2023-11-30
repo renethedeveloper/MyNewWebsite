@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-let connectionString = `mongodb+srv://Rene:${process.env.MONGO_PASS}@cluster0.zbldfqq.mongodb.net/DreamPop?retryWrites=true&w=majority`
+let connectionString = process.env.MONGO_URL
 console.log(connectionString);
 
 mongoose.connect(connectionString, {
