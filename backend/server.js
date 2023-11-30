@@ -22,11 +22,23 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "dist")));
 
 
 
 
+
+
+
+
+
+
+app.use(express.static(path.join(__dirname, "../client/dist")))
+app.use( (req, res, next) => {
+    if (req.path.startsWith("/server")) {
+        req.url = req.url.replace("/server", "");
+    }; // allows us to host it on render
+    next();
+});
 
 
 app.post("/submitForm", async (req, res) => {
