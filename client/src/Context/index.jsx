@@ -13,7 +13,7 @@ const ContextProvider = ( {children} ) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/products");
+        const response = await axios.get("https://backenddreampop.onrender.com/products");
         setProductsArray(response.data);
         setEventData(response.data); // Add setEventData to the dependency array
         localStorage.setItem("products", JSON.stringify(response.data));
