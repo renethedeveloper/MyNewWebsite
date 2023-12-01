@@ -6,12 +6,12 @@ export default {
   server: {
     proxy: {
       '/server': {
-        target: 'http://localhost:3000',
+        target: 'https://backenddreampop.onrender.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/server/, ''),
       },
       '/products': {
-        target: 'http://localhost:3000',
+        target: 'https://backenddreampop.onrender.com/',
         changeOrigin: true,
       },
     },

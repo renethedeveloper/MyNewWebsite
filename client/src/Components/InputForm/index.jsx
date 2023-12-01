@@ -20,7 +20,7 @@ const InputProducts = () => {
         console.log("Testing before Axios call")
         axios({
             method: "POST",
-            url: "http://localhost:3000/products",   
+            url: "https://backenddreampop.onrender.com/products",   
             data: productData // You will find this data in ***req.body*** of the route
         }).then((res) => {
             

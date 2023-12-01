@@ -10,7 +10,7 @@ const EventPage = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/events");
+        const response = await axios.get("https://backenddreampop.onrender.com/events");
 
         setEventData(response.data);
         console.log("event data", response.data)
