@@ -1,13 +1,13 @@
 .navbar {
   color: rgb(130, 6, 147);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
   align-items: center;
   font-size: 15px;
   max-height: 140px;
   position: relative;
-  margin-left: 20px;
+  margin-left: 1px;
 }
 
 .logo {
@@ -16,7 +16,7 @@
   border-radius: 90px;
   margin-top: 40px;
   margin-right: 40px;
-  margin-left: -10px;
+  margin-left: -20px;
 }
 
 .navbar .links {
@@ -38,7 +38,8 @@
 }
 
 .contact {
-  float: right;
+  /* float: right; */
+
 }
 
 .dropdown {

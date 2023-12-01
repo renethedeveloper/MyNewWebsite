@@ -11,15 +11,16 @@ const NavBar = () => {
     <div className='navbar'>
       <Link to='/' className='link'>Home</Link>
       <Link to='/about' className='link'>About</Link>
+      <Link to='/Showroom' className='link'>Showroom</Link>
       <div className='dropdown'>
-        <button className='dropdown'>Products &#9660;</button>  
+        {/* <button className='dropdown'>Products &#9660;</button>  
         <div className='dropdown-content'>
           <Link className='dropDownMenuItem' to='/products/decor'>Decor</Link>
           <Link className='dropDownMenuItem' to='/products/lighting'>Lighting</Link>
           <Link className='dropDownMenuItem' to='/products/kitchen'>Kitchen</Link>
           <Link className='dropDownMenuItem' to='/products/furniture'>Furniture</Link>
         
-        </div>
+        </div> */}
       </div>
       <Link to='/contact' className="contact link">Contact</Link>
       <Link to="/">

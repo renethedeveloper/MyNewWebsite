@@ -1,0 +1,15 @@
+.showGrid {
+    display: grid;
+    margin-top: 40px;
+    margin-left: 60px;
+    grid-template-rows: repeat(4, auto); /* 4 rows with automatic height */
+    grid-template-columns: repeat(4, auto); /* 4 columns with automatic width */
+}
+
+
+.showRoomImage{
+    width: 200px;
+    height: 150px;
+    object-fit: fill;
+    margin: 5px;
+}
