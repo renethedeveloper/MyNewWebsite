@@ -3,12 +3,16 @@ import { useParams } from 'react-router-dom';
 import './index.css';
 import { MyContext } from '../../Context';
 
-const Showroom = () => {
-  const { type } = useParams(); 
+const Showroom = ({type}) => {
+//   const { type } = useParams(); 
   const { productsArray } = useContext(MyContext);
 
   // Filter products based on the type
-  const items = productsArray.filter((product) => product.type === type);
+  const items = productsArray.filter((product) => product.type.toLowerCase() === type);
+  console.log(type)
+  
+  
+
 
   return (
     <div className='showGrid'>
