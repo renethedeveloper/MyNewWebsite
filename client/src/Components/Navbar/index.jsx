@@ -11,7 +11,7 @@ const NavBar = () => {
     <div className='navbar'>
       <Link to='/' className='link'>Home</Link>
       <Link to='/about' className='link'>About</Link>
-      <Link to='/Showroom' className='link'>Showroom</Link>
+      {/* <Link to='/Showroom' className='link'>Showroom</Link> */}
       <div className='dropdown'>
         {/* <button className='dropdown'>Products &#9660;</button>  
         <div className='dropdown-content'>
