@@ -33,7 +33,7 @@ const ContextProvider = ( {children} ) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/events");
+        const response = await axios.get("https://backenddreampop.onrender.com/events");
         console.log(response.data, "Event data fetched!");
         setEventData(response.data);
       } catch (error) {
