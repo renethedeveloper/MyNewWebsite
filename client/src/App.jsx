@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 import InputProducts from './Components/InputForm';
 import Gallery from './Components/Gallery';
@@ -24,10 +24,10 @@ function App() {
         <Route path="/input" element={<InputProducts />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/showroom" element={<Showroom />} />
-        <Route path="/showroom/decor" element={<Showroom category="decor" />} />
-        <Route path="/showroom/lighting" element={<Showroom category="lighting" />} />
-        <Route path="/showroom/furniture" element={<Showroom category="furniture" />} />
-        <Route path="/showroom/kitchen" element={<Showroom category="kitchen" />} />
+        <Route path="/showroom/decor" element={<Showroom type="decor" />} />
+        <Route path="/showroom/lighting" element={<Showroom type="lighting" />} />
+        <Route path="/showroom/furniture" element={<Showroom type="furniture" />} />
+        <Route path="/showroom/kitchen" element={<Showroom type="kitchen" />} />
         <Route path="/" element={<Home />} />
         <Route path="/products/:productType/:productId" component={Gallery} />
         <Route path="/products/kitchen" element={<Gallery productType="Kitchen" />} />

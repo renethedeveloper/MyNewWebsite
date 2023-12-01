@@ -4,11 +4,11 @@ import './index.css';
 import { MyContext } from '../../Context';
 
 const Showroom = () => {
-  const { category } = useParams();
+  const { type } = useParams(); 
   const { productsArray } = useContext(MyContext);
 
-  // Filter products based on the category
-  const items = productsArray.filter((product) => product.category === category);
+  // Filter products based on the type
+  const items = productsArray.filter((product) => product.type === type);
 
   return (
     <div className='showGrid'>
