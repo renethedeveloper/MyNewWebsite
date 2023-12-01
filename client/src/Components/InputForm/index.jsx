@@ -9,7 +9,7 @@ const InputProducts = () => {
         type:"",
         title: "",
         description: "",
-        image: "",
+        images: [],
         price: 0,
         isAvailable: false
     });
@@ -39,7 +39,7 @@ const InputProducts = () => {
     <br />
     Description: <input type="text" name="description" value={productData.description} onChange={(e) => setProductData({ ...productData, description: e.target.value })} />
     <br />
-    Image: <input type="text" name="image" value={productData.image} onChange={(e) => setProductData({ ...productData, image: e.target.value })} />
+    Image: <input type="text" name="image" value={productData.images} onChange={(e) => setProductData({ ...productData, images: e.target.value })} />
     <br />
     Price: <input type="number" name="price" value={productData.price} onChange={(e) => setProductData({ ...productData, price: +e.target.value })} />
     <br />

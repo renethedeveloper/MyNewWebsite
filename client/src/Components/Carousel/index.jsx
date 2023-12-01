@@ -26,8 +26,8 @@ const Carousel = ({ productsArray, selectedProduct, handleClickImage }) => {
       <h3 className="carouselTitle">{productObject.name}</h3>
       <img
         className="carouselImage"
-        onClick={() => handleImage(productObject.image, productObject)}
-        src={productObject.image}
+        onClick={() => handleImage(productObject.images, productObject)}
+        src={productObject.images}
         alt={productObject.id}
       />
     </div>

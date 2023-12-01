@@ -17,7 +17,7 @@ const Showroom = ({type}) => {
   return (
     <div className='showGrid'>
       {items.map((item) => (
-        <img key={item._id} className='showRoomImage' src={item.image} alt={item.title} />
+        <img key={item._id} className='showRoomImage' src={item.images[0]} alt={item.title} />
       ))}
     </div>
   );
