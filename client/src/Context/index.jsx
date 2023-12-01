@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const MyContext = React.createContext();
 
-const ContextProvider = ( children ) => {
+const ContextProvider = ( {children} ) => {
   const [productsArray, setProductsArray] = useState([]);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
