@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import './index.css';
+import { MyContext } from '../../Context';
 
 const Showroom = () => {
   const { category } = useParams();
-  const [items, setItems] = useState([]);
+  const { productsArray } = useContext(MyContext);
 
-  useEffect(() => {
-    // Fetch items based on the category
-    axios.get(`/server/products/${category}`)
-      .then((response) => {
-        setItems(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching items:', error);
-      });
-  }, [category]);
+  // Filter products based on the category
+  const items = productsArray.filter((product) => product.category === category);
 
   return (
     <div className='showGrid'>
