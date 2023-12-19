@@ -4,13 +4,13 @@ import Carousel from "../Carousel";
 import "./index.css";
 
 
-const Gallery = ({ productType }) => {
+const ProductCard = ({ productType }) => {
   
-  const { setSelectedImages, selectedImages, productsArray, selectedProduct, setSelectedProduct } = useContext(MyContext);
+  const { setSelectedImage, selectedImage, productsArray, selectedProduct, setSelectedProduct } = useContext(MyContext);
 
   const handleClickImage = (product) => {
     setSelectedProduct(product);
-    setSelectedImages(product.images);
+    setSelectedImage(product.images);
   };
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Gallery = ({ productType }) => {
   
     // Check if a product is selected from the SearchBar
     if (selectedProduct && selectedProduct.type === productType) {
-      setSelectedImages(selectedProduct.images);
+      setSelectedImage(selectedProduct.images);
     } else {
       // Find the first product of the specified productType
       const firstProduct = productsArray.find((product) => product.type === productType);
@@ -26,13 +26,13 @@ const Gallery = ({ productType }) => {
       // Set the selected product to the first product, if it exists
       if (firstProduct) {
         setSelectedProduct(firstProduct);
-        setSelectedImages(firstProduct.images);
+        setSelectedImage(firstProduct.images);
       } else {
         setSelectedProduct(null);
-        setSelectedImages(""); // No product found for the productType
+        setSelectedImage(""); // No product found for the productType
       }
     }
-  }, [productsArray, productType, setSelectedProduct, setSelectedImages, selectedProduct]);
+  }, [productsArray, productType, setSelectedProduct, setSelectedImage, selectedProduct]);
   
   
 
@@ -44,7 +44,7 @@ const Gallery = ({ productType }) => {
         <div className="Title">{productType}</div>
 
         <div className="mainPic">
-          <img className="image" src={selectedImages} alt="mainImage" />
+          <img className="image" src={selectedImage} alt="mainImage" />
         </div>
 
         {selectedProduct && (
@@ -63,9 +63,9 @@ const Gallery = ({ productType }) => {
 
       <div className="carousel">
         {<Carousel productsArray={filteredProducts} selectedProduct={selectedProduct} handleClickImage={handleClickImage} />}
-      </div>
+      </div>  
     </div>
   );
 };
 
-export default Gallery;
+export default ProductCard;
